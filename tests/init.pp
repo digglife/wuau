@@ -9,4 +9,9 @@
 # Learn more about module testing here:
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-include wuau
+class { 'wuau':
+  enabled => true,
+  wsus_server => 'http://10.0.0.111',
+  auto_reboot => false,
+  reschedule_wait_time => 30,
+}
